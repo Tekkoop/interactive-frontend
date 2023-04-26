@@ -2,6 +2,14 @@
 
 /*--------------------------------------------Colors*/
 
+
+#my-map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
 .bg-color-name-title {
     background-color: #676767;
 }

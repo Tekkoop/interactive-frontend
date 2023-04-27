@@ -1,66 +1,80 @@
+ Skip to content Pull requests Issues Codespaces Marketplace Explore @mikeydolding Code-Institute-Solutions / InteractiveFrontendDevelopment-Resume Public Fork your own copy of Code-Institute-Solutions/InteractiveFrontendDevelopment-Resume Code Issues
+1 Pull requests Actions Projects Security Insights Beta Try the new code view InteractiveFrontendDevelopment-Resume/02-TheGitHubAPI/02-initial_data_retieval_setup/github.html @NielMc NielMc matching html boilerplate for all github api units Latest commit
+ded63c5 May 27, 2021 History 1 contributor 140 lines (129 sloc) 6.84 KB
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/github-information.js"></script>
     <title>Rosie</title>
 </head>
+
 <body>
     <header>
         <div class="row no-gutters">
-            <a class="col-md-4 logo" href="02-index.html"></a>
+            <a href="index.html" class="col-md-4 logo">
+
+            </a>
             <div class="col-md-8">
                 <div class="row no-gutters bg-color-name-title">
                     <div class="col heading">
                         <h1 class="name">Rosie Odenkirk</h1>
-                        <h2 class="title"> Full Stack Developer</h2>
+                        <h2 class="title">Full Stack Developer</h2>
                     </div>
                 </div>
                 <div class="row no-gutters">
                     <div class="col">
-                        <ul id="nav" class="list-inline menucontainer row">
-                            <li class="col-xs-6 col-sm-2 ui-menu-color-home menuitem">
+                        <ul id="nav" class="list-inline menucontainer">
+                            <li class="col-6 col-sm-2 ui-menu-color-home list-inline-item menuitem">
                                 <a href="index.html" class="hvr-sweep-to-bottom"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
                             </li>
-                            <li class="col-xs-6 col-sm-2 ui-menu-color-resume menuitem">
+                            <li class="col-6 col-sm-2 ui-menu-color-resume list-inline-item menuitem">
                                 <a href="resume.html" class="hvr-sweep-to-bottom"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span>Resume</span></a>
                             </li>
-                            <li class="col-xs-6 col-sm-2 ui-menu-color-contact menuitem">
-                                <a href="contact.html" class="hvr-sweep-to-bottom"><i class=" fa fa-commenting-o" aria-hidden="true"></i><span>Contact</span></a>
+                            <li class="col-6 col-sm-2 ui-menu-color-contact list-inline-item menuitem">
+                                <a href="contact.html" class="hvr-sweep-to-bottom"><i class="fa fa-comment-o" aria-hidden="true"></i><span>Contact</span></a>
                             </li>
-                            <li class="col-xs-6 col-sm-2 ui-menu-color-interests menuitem">
+                            <li class="col-6 col-sm-2 ui-menu-color-interests list-inline-item menuitem">
                                 <a href="interests.html" class="hvr-sweep-to-bottom"><i class="fa fa-users" aria-hidden="true"></i><span>Interests</span></a>
                             </li>
-                            <li class="col-xs-6 col-sm-2 ui-menu-color-github menuitem">
+                            <li class="col-6 col-sm-2 ui-menu-color-github list-inline-item menuitem">
                                 <a href="github.html" class="hvr-sweep-to-bottom"><i class="fa fa-github" aria-hidden="true"></i><span>GitHub</span></a>
                             </li>
-                            <li class="col-xs-6 col-sm-2 ui-menu-color-download menuitem">
+                            <li class="col-6 col-sm-2 ui-menu-color-download list-inline-item menuitem">
                                 <a href="assets/cv/sample-cv.pdf" target="_blank" class="hvr-sweep-to-bottom"><i class="fa fa-download" aria-hidden="true"></i><span>Download CV</span></a>
                             </li>
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </header>
     <section class="container-fluid">
         <div class="row bg-color-contact">
-            <div>
-                <h3 class="contact-heading uppercase text-center">View My GitHub Projects:</h3>
-                <h5 class="uppercase text-center">(or change the username to search for other user profiles)</h5>
-            </div>
+            <div class="col">
+                <h3 class="contact-heading uppercase text-center">View My GitHub Projects</h3>
+                <h5 class="uppercase text-center">You can also search on other user profiles</h5>
 
-            <div class="center-form">
-                <input type="text" id="gh-username" value="octocat" oninput="fetchGitHubInformation()">
-                <div id="gh-user-data" class="clearfix"></div>
-                <div id="gh-repo-data" class="clearfix"></div>
+                <div class="center-form">
+                    <input type="text" id="gh-username" value="octocat" oninput="fetchGitHubInformation()" />
+                    <div id="gh-user-data"></div>
+                    <div id="gh-repo-data"></div>
+
+                </div>
+
             </div>
         </div>
+
     </section>
     <footer class="container-fluid">
         <div id="footer-details" class="row">
@@ -122,7 +136,9 @@
                 </ul>
             </div>
         </div>
+
     </footer>
 </body>
 
 </html>
+Footer © 2023 GitHub, Inc. Footer navigation Terms Privacy Security Status Docs Contact GitHub Pricing API Training Blog About
